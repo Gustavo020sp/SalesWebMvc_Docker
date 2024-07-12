@@ -9,10 +9,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["SalesWebMvc_Docker/SalesWebMvc_Docker.csproj", "SalesWebMvc_Docker/"]
-RUN dotnet restore "./SalesWebMvc_Docker/SalesWebMvc_Docker.csproj"
+COPY ["SalesWebMvc_Docker.csproj", "."]
+RUN dotnet restore "./SalesWebMvc_Docker.csproj"
 COPY . .
-WORKDIR "/src/SalesWebMvc_Docker"
+WORKDIR "/src/."
 RUN dotnet build "./SalesWebMvc_Docker.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish

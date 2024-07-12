@@ -1,0 +1,20 @@
+services:
+  saleswebmvc:
+    image: ${DOCKER_REGISTRY-}saleswebmvc
+    build:
+      context: SalesWebMvc_Docker
+      dockerfile: Dockerfile
+    ports:
+     - "8081:80"
+    depends_on:
+     - sqldata
+
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - SA_PASSWORD=Minhasenha1995#@
+      - ACCEPT_EULA=Y
+    volumes:
+      - C:\dados\volumes\mssql:/var/opt/mssql/data
+    ports:
+      - "1450:1433"
