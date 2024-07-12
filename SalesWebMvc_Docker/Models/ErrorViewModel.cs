@@ -1,4 +1,4 @@
-namespace SalesWebMvc_Docker.Models
+namespace SalesWebMvc.Models
 {
     public class ErrorViewModel
     {

@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using SalesWebMvc_Docker.Models;
+using SalesWebMvc.Models;
 using System.Diagnostics;
 
-namespace SalesWebMvc_Docker.Controllers
+namespace SalesWebMvc.Controllers
 {
     public class HomeController : Controller
     {
@@ -18,7 +18,7 @@ namespace SalesWebMvc_Docker.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
         {
             return View();
         }
